@@ -1386,6 +1386,11 @@ class Axes(_AxesBase):
         .. plot:: gallery/lines_bars_and_markers/eventplot_demo.py
         """
 
+        if 'snap' not in kwargs and len(positions) > 200:
+            _log.warning('Warning - eventplot(): Due to the High Number of Events (>200), Snapping Has Been Turned Off. \n*Note: Snapping May Be Turned On Manually, but Data May Be "Missing" in the Outputted Graph.')
+            kwargs['snap'] = False
+            kwargs['antialiased'] = True
+
         lineoffsets, linelengths = self._process_unit_info(
                 [("y", lineoffsets), ("y", linelengths)], kwargs)
 
