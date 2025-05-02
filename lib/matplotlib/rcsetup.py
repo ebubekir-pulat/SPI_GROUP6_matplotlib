@@ -1108,7 +1108,7 @@ _validators = {
     "axes.spines.bottom":    validate_bool,  # denoting data boundary.
     "axes.spines.top":       validate_bool,
 
-    "axes.aspect": validate_aspect, # equal, auto, a number
+    "axes.aspect": validate_aspect, # auto, equal, a number
 
     "axes.titlesize":     validate_fontsize,  # Axes title fontsize
     "axes.titlelocation": ["left", "center", "right"],  # Axes title alignment
