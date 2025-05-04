@@ -680,7 +680,7 @@ class _AxesBase(martist.Artist):
             raise ValueError('Width and height specified must be non-negative')
         self._originalPosition = self._position.frozen()
         self.axes = self
-        self._aspect = 'auto'
+        self._aspect = None
         self._adjustable = 'box'
         self._anchor = 'C'
         self._stale_viewlims = dict.fromkeys(self._axis_names, False)
@@ -1658,6 +1658,8 @@ class _AxesBase(martist.Artist):
 
         This is either "auto", "equal" or a float giving the ratio of y/x-scale.
         """
+        if self._aspect:
+            return self._aspect
         aspect = mpl.rcParams['axes.aspect']
         return aspect if aspect != 'equal' else 1
 
