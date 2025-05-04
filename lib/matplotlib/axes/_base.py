@@ -1658,7 +1658,8 @@ class _AxesBase(martist.Artist):
 
         This is either "auto", "equal" or a float giving the ratio of y/x-scale.
         """
-        return mpl.rcParams['axes.aspect']
+        aspect = mpl.rcParams['axes.aspect']
+        return aspect if aspect != 'equal' else 1
 
     def set_aspect(self, aspect, adjustable=None, anchor=None, share=False):
         """
