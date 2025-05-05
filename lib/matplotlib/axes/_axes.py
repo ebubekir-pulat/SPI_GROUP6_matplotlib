@@ -1393,7 +1393,7 @@ class Axes(_AxesBase):
                 "but runs the risk of 'missing' data in the outputted graph.", 
                 len(positions))
             kwargs['snap'] = False
-            kwargs['antialiased'] = True
+            kwargs['antialiaseds'] = True
 
         lineoffsets, linelengths = self._process_unit_info(
                 [("y", lineoffsets), ("y", linelengths)], kwargs)
